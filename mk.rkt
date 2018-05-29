@@ -205,7 +205,7 @@
     (cond
       ((null? $) (g2 s/c))
       ((promise? $) (delay/name (loop (force $))))
-      (else ($append-map $ g1)))))
+      (else ($append-map g1 $)))))
 
 (call/initial-state #f
    (call/fresh
